@@ -1,10 +1,29 @@
 import kagglehub
 from pathlib import Path
+import subprocess
 
-dataset_path = Path("Input")
-dataset_path.mkdir(parents=True, exist_ok=True)
+def downloadFromKaggle():
+    datasets = [
+        "snehaanbhawal/resume-dataset",
+        "saugataroyarghya/resume-dataset"
+    ]
 
-# Download latest version
-path = kagglehub.dataset_download("snehaanbhawal/resume-dataset", output_dir=str(dataset_path))
+    dataset_paths = []
 
-print("Path to dataset files:", path)
+    for i, _ in enumerate(datasets):
+        dataset_paths.append(Path("Input")/ "Kaggle" / f"dataset{i}")
+
+    for path in dataset_paths:
+        path.mkdir(parents=True, exist_ok=True)
+
+    # Download latest version
+    for el in zip(datasets, dataset_paths):
+        print(f"Downloading: {el[0]} in {el[1]}")
+        path =  kagglehub.dataset_download(el[0], output_dir=str(el[1]))
+
+def downloadFromGit():
+    dataset_paths = []
+
+if __name__ == "__main__":
+    downloadFromKaggle()
+    downloadFromGit()
