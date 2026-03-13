@@ -3,3 +3,5 @@ Output/*
 Input/*
 venv/*
 .venv/*
+data/input/*
+.idea/
