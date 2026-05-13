@@ -4,4 +4,5 @@ Input/*
 venv/*
 .venv/*
 data/input/*
+data/input-clean/*
 .idea/

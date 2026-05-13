@@ -1,0 +1,8 @@
+{
+  "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2",
+  "architecture": "cross_encoder",
+  "max_len": 384,
+  "threshold": 0.5,
+  "hidden_size": 384,
+  "training_pair_source": "sentence-transformer semantic similarity (no TF-IDF)"
+}
